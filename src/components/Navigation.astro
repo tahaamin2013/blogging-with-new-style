@@ -1,0 +1,54 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+---
+<div class="nav-bar">
+<div class="nav-links">
+  <img class="Logo" src="/Logo.png" alt="Logo">
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/blog">Blog</a>
+  <a href="/tags/">Tags</a>
+  <ThemeIcon />
+  <a href="#" id="donate-styling">Reach out to us</a>
+  <a href="#" id="Social-Media-Icon"><img src="/Facebook.png" alt="FaceBook Icon"></a>
+</div>
+  </div>
+
+  <style>
+
+    .Blog-title{
+      font-family: Exo;
+      text-align: center;
+    }
+
+    #Social-Media-Icon:hover{
+      background-color: transparent;
+    }
+    
+    a img{
+      margin-top: -8px;
+      vertical-align: middle;
+      width: 40px;
+      height: 40px;
+    }
+    #donate-styling{
+      background-color: #FFB800;
+      color: white;
+      border-radius: 10px;
+      font-size: 12px;
+      padding: 13px;
+      font-weight: bold;
+      margin-left: 20px;
+      vertical-align: middle;
+      margin-top: -10px;
+    }
+
+    
+    .Logo{
+      vertical-align: middle;
+      width: 90px;
+      margin-left: -30px;
+      margin-right: 20%;
+    }
+    
+  </style>

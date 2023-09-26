@@ -1,0 +1,54 @@
+---
+const allPosts = await Astro.glob("../posts/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const pageTitle = "Tag Index";
+
+
+---
+
+  <div class="tags">
+    {
+  // Render the "All" button outside the map loop
+  <p class="tag">
+    <a href="/blog">All</a>
+  </p>
+}
+    {     
+      tags.map((tag) => (
+        
+      <p class="tag">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ) )
+    }
+  </div>
+<style>
+  a {
+     box-shadow:0px 3px 20px -4px black;
+      margin: 0.25em;
+      border: none;
+      border-radius: 50px;
+      padding: .4em 1em;
+      font-size: 1.15em;
+      background-color: white;
+      text-decoration: none;
+      color: black;
+  }
+  .tag:hover{
+          transform: translateY(-5px);
+          transition: transform 200ms;
+  }
+  a:hover {
+
+      background-color: rgba(1, 255, 234, 0.37);
+    }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 50px 20px 50px;
+  }
+
+
+
+</style>

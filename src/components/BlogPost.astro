@@ -1,0 +1,112 @@
+---
+const { url, title, image, category, description, Short} = Astro.props;
+---
+
+  <div class="box">
+    <a class="blog-post-link" href={url}>
+      <div class="blog-post-image-container">
+        {image && <img class="blog-post-image" src={image.url} alt={image.alt} />}
+      </div>
+      <div class="details-section">
+        <h2 class="blog-post-title">{title}</h2>
+        <p class="short">{Short}</p>
+        
+      <p href={url} class="Read-now"><span class="Span-TEXT-READ">Read Now</span><i class="arrow-icon">&rarr;</i></p>
+    </div>
+  </a>
+</div>
+
+<style>
+  
+
+  .arrow-icon{
+    display: none;
+    margin-left: 130px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Arial Black", sans-serif;
+  }
+  .short {
+    margin-top: 4px;
+    width: 250px;
+    color: black;
+  }
+  .Span-TEXT-READ{
+    text-decoration: underline;
+  }
+  .Read-now {
+    margin-top: auto;
+    margin-bottom: 40px;
+    opacity: 30%;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .blog-post-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    .Read-now {
+      opacity: 100%;
+      color: #000;
+    }
+    .arrow-icon{
+      display: inline-block;
+    }
+  }
+
+  .box {
+    margin-inline-start: 20px;
+    max-height: 500px;
+    height: 450px;
+    display: inline-flex;
+  }
+
+  .blog-post-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+    background-color: WHITE;
+    color: #000;
+    margin: 15px;
+    width: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+
+  }
+
+  .blog-post-image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .blog-post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .details-section {
+    border-radius: 10px; /* Add border-radius to content container */
+    width: 100%;
+    margin-bottom: -30px;
+    padding-left: 20px;
+    background-color: white;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: -16px; /* Add some padding to separate content from the border */
+  }
+
+  .blog-post-title {
+    font-family: 'Exo', sans-serif;
+    margin-right:18px;
+    font-size: 18px;
+    color: black;
+  }
+</style>

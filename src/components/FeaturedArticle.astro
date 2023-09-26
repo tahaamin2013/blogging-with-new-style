@@ -1,0 +1,19 @@
+---
+import FeaturedPost from "../components/featuredPost.astro";
+
+const allPosts = await Astro.glob("../pages/post-featured/*.md");
+---
+
+{
+  allPosts.map((post) => (
+    <FeaturedPost
+      url={post.url}
+      title={post.frontmatter.title}
+      image={post.frontmatter.image}
+      category={post.frontmatter.tags}
+      description={post.frontmatter.description}
+    />
+  ))
+}
+
+

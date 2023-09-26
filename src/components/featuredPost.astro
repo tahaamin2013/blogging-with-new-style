@@ -1,0 +1,70 @@
+---
+const { url, title, image, category, description} = Astro.props;
+---
+
+<div class="featured-article">
+    <div class="article-content">
+        <h2 class="blog-post-title">{title}</h2> {}
+        <h4 class="blog-post-description">{description.slice(0,150)}...</h4> {/* Added description */}
+        <a href={url} class="featured-button">Read More</a> {/* Added button */}
+      </div>
+    
+    {image && <img class="blog-post-image" src={image.url} alt={image.alt}/>}
+  </div>
+<style>
+    .blog-post-description {
+    color: rgba(0, 0, 0, 0.356);
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 20px; /* Adjust the margin to your liking */
+  }
+
+  .featured-article {
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 10%;
+    padding-left: 50px;
+    padding-top: 30px;
+    border-radius: 20px;
+  }
+
+  .featured-article img {
+    width: 600px;
+    height:300px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .article-content {
+    margin-top: 50px;
+    flex: 1;
+    font-family: 'Exo', sans-serif;
+    padding-right: 20px;
+  }
+
+  .featured-article h2 { /* Changed h1 to h2 */
+    font-size: 25px;
+    margin-top: -60px;
+  }
+
+  .featured-article p {
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 30px;
+  }
+
+  .featured-button { /* Added button styling */
+    text-decoration: none;
+    color: white;
+    padding: 7px 25px;
+    background-color: black;
+    font-size: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 10px; /* Adjust the margin to your liking */
+  }
+</style>
