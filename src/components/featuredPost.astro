@@ -39,6 +39,11 @@ const { url, title, image, category, description} = Astro.props;
     border-radius: 20px;
   }
 
+  @media (max-width: 600px) {
+    .featured-article img {
+    display: none;
+  }
+  }
 
   .article-content {
     margin-top: 50px;
